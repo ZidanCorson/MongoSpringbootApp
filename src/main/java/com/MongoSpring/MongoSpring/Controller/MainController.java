@@ -27,6 +27,11 @@ public class MainController {
         studentRepo.save(student);
     }
 
+    @PostMapping("/addStudentList")
+    public void addStudent(@RequestBody List<Student> students){
+        studentRepo.saveAll(students);
+    }
+
     @PutMapping("/updateStudent")
     public void updateStudent(@RequestBody Student student){
         Student data = studentRepo.findById(student.getRno()).orElse(null);

@@ -5,6 +5,8 @@ import com.MongoSpring.MongoSpring.Repository.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class MainController {
     @Autowired
@@ -13,6 +15,11 @@ public class MainController {
     @GetMapping("/getStudent/{id}")
     public Student getStudent(@PathVariable Integer id) {
         return studentRepo.findById(id).orElse(null);
+    }
+
+    @GetMapping("/fetchStudents")
+    public List<Student> fetchStudents(){
+        return studentRepo.findAll();
     }
 
     @PostMapping("/addStudent")

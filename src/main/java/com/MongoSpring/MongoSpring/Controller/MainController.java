@@ -27,6 +27,21 @@ public class MainController {
         studentRepo.save(student);
     }
 
+    @PutMapping("/updateStudent")
+    public void updateStudent(@RequestBody Student student){
+        Student data = studentRepo.findById(student.getRno()).orElse(null);
+        if (data!= null){
+            data.setName(student.getName());
+            data.setAddress(student.getAddress());
+            studentRepo.save(data);
+        }
+    }
+
+    @DeleteMapping("/deleteStudent/{id}")
+    public void deleteStudent(@PathVariable Integer id){
+        studentRepo.deleteById(id);
+    }
+
 
 
 }

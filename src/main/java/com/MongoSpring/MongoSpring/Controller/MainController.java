@@ -45,12 +45,23 @@ public class MainController {
         return studentRepo.findAll();
     }
 
+    @GetMapping("/getMax")
+    public Integer getMax(){
+        return studentRepo.max();
+    }
+
+    @GetMapping("/getMin")
+    public Integer getMin(){
+        return studentRepo.min();
+    }
+
     @PostMapping("/addStudent")
     public void addStudent(@RequestBody Student student){
         Student studentTemp = new Student();
         studentTemp.setRno(generateSequence(Student.SEQUENCE_NAME));
         studentTemp.setName(student.getName());
         studentTemp.setAddress(student.getAddress());
+        studentTemp.setMark(student.getMark());
         studentRepo.save(studentTemp);
     }
 

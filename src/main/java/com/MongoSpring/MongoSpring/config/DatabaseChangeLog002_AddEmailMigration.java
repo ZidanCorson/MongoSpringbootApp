@@ -10,10 +10,10 @@ import org.springframework.data.mongodb.core.query.Update;
 
 
 @ChangeUnit(id="addEmailField", order = "002", author = "Zidan")
-public class AddEmailMigration {
+public class DatabaseChangeLog002_AddEmailMigration {
     private final MongoTemplate mongoTemplate;
 
-    public AddEmailMigration(MongoTemplate mongoTemplate){
+    public DatabaseChangeLog002_AddEmailMigration(MongoTemplate mongoTemplate){
         this.mongoTemplate=mongoTemplate;
     }
 

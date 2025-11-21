@@ -1,19 +1,16 @@
 package com.MongoSpring.MongoSpring.config;
 
-import com.MongoSpring.MongoSpring.Model.DatabaseSequence;
 import com.MongoSpring.MongoSpring.Model.Student;
-import com.github.cloudyrock.mongock.ChangeLog;
-import com.github.cloudyrock.mongock.ChangeSet;
 import io.mongock.api.annotations.ChangeUnit;
 import io.mongock.api.annotations.Execution;
 import io.mongock.api.annotations.RollbackExecution;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 @ChangeUnit(id = "seedDatabase", order = "001", author = "Zidan")
-public class DatabaseChangeLog {
+public class DatabaseChangeLog001_SeedDatabase {
     private final MongoTemplate mongoTemplate;
 
-    public DatabaseChangeLog(MongoTemplate mongoTemplate){
+    public DatabaseChangeLog001_SeedDatabase(MongoTemplate mongoTemplate){
         this.mongoTemplate=mongoTemplate;
     }
 

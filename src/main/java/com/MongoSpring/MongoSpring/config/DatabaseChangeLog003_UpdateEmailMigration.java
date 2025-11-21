@@ -12,10 +12,10 @@ import static org.springframework.data.mongodb.core.query.Criteria.where;
 import static org.springframework.data.mongodb.core.query.Query.query;
 
 @ChangeUnit(id="updateExistingEmails", order = "003", author = "Zidan")
-public class UpdateEmailMigration {
+public class DatabaseChangeLog003_UpdateEmailMigration {
     private final MongoTemplate mongoTemplate;
 
-    public UpdateEmailMigration(MongoTemplate mongoTemplate){
+    public DatabaseChangeLog003_UpdateEmailMigration(MongoTemplate mongoTemplate){
         this.mongoTemplate = mongoTemplate;
     }
 

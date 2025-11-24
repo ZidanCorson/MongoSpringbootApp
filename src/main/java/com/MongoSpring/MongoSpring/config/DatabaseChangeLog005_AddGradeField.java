@@ -51,3 +51,5 @@ public class DatabaseChangeLog005_AddGradeField {
         mongoTemplate.updateMulti(q, u, Student.class);
     }
 }
+
+
